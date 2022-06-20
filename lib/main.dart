@@ -69,6 +69,7 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
 
   @override
   void initState() {
+    settingsData = SettingsData(true);
     refreshTimer = Timer.periodic(const Duration(milliseconds: 500), (timer) {
       setState(() {
         stopwatchTime = stopwatch.elapsed.inSeconds.toString();
@@ -380,29 +381,49 @@ class ThunderCalculatorSettings extends StatefulWidget {
 }
 
 class _ThunderCalculatorSettingsState extends State<ThunderCalculatorSettings> {
-  String systemOfMeasurementStr = "Metric";
+  String systemOfMeasurementStr = "";
+  String metricStr = "";
+  String imperialStr = "";
 
   SettingsData settingsData = SettingsData(true);
+  Timer? refreshTimer;
+
+  @override
+  void initState() {
+    refreshTimer = Timer.periodic(const Duration(milliseconds: 1), (timer) {
+      setState(() {
+        if (settingsData.metricSystem)
+        {
+          systemOfMeasurementStr = metricStr;
+        }
+        else
+        {
+          systemOfMeasurementStr = imperialStr;
+        }
+      });
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    refreshTimer?.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     var appLoc = AppLocalizations.of(context);
-    settingsData = ModalRoute.of(context)!.settings.arguments as SettingsData;
+    var tmp = appLoc!.more;
 
-    setState(() {
-      if (settingsData.metricSystem)
-      {
-        systemOfMeasurementStr = appLoc!.systemOfMeasurementMetric;
-      }
-      else
-      {
-        systemOfMeasurementStr = appLoc!.systemOfMeasurementImperial;
-      }
-    });
+    metricStr = appLoc.systemOfMeasurementMetric;
+    imperialStr = appLoc.systemOfMeasurementImperial;
+
+    settingsData = ModalRoute.of(context)!.settings.arguments as SettingsData;
 
     return Scaffold(
       appBar: AppBar(
-          title: Text('${appLoc!.title} - ${appLoc.settingsTitle}'),
+          title: Text('${appLoc.title} - ${appLoc.settingsTitle}'),
           centerTitle: true,
           backgroundColor: const Color.fromRGBO(5, 63, 94, 1),
       ),

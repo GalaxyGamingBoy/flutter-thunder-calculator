@@ -51,7 +51,7 @@
   "@systemOfMeasurementMetric": {
     "description": "The Metric system of measurement"
   },
-  "systemOfMeasurementImperial": "Metric",
+  "systemOfMeasurementImperial": "Imperial",
   "@systemOfMeasurementImperial": {
     "description": "The Imperial system of measurement"
   },
