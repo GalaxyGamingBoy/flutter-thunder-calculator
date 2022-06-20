@@ -2,10 +2,20 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:thunder_calculator/l10n/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: ThunderCalculatorMain(),
+  runApp(MaterialApp(
+    home: const ThunderCalculatorMain(),
+    supportedLocales: L10n.all,
+    localizationsDelegates: const [
+      AppLocalizations.delegate,
+      GlobalMaterialLocalizations.delegate,
+      GlobalCupertinoLocalizations.delegate,
+      GlobalWidgetsLocalizations.delegate
+    ],
   ));
 }
 
@@ -24,7 +34,7 @@ class ThunderCalculatorMain extends StatefulWidget {
 
 class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
   // App Version
-  String version = "1.2.1";
+  String version = "1.3.0";
 
   // Other
   String timeType = "Sec";
@@ -76,12 +86,33 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
   
   @override
   Widget build(BuildContext context) {
+    var appLoc = AppLocalizations.of(context);
+
+    // Refresh Translations
+    if (stopwatch.isRunning)
+      {
+        stopwatchStr = appLoc!.stopwatchEnd;
+      }
+    else
+      {
+        stopwatchStr = appLoc!.stopwatchStart;
+      }
+
+    if (settingsData.metricSystem)
+    {
+      distanceType = appLoc.distanceTypeKM;
+    }
+    else
+    {
+      distanceType = appLoc.distanceTypeMI;
+    }
+
     return Scaffold(
       backgroundColor: Colors.black,
 
       // AppBar
       appBar: AppBar(
-        title: const Text('Thunder Calculator'),
+        title: Text(appLoc.title),
         centerTitle: true,
         backgroundColor: const Color.fromRGBO(5, 63, 94, 1),
         leading: GestureDetector(
@@ -92,14 +123,6 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
                   arguments: settingsData
                 )
             ));
-            if (settingsData.metricSystem)
-              {
-                distanceType = "km";
-              }
-            else
-              {
-                distanceType = "mi";
-              }
 
             calculateDistance(timeController.text);
             distance = kmAway;
@@ -127,7 +150,7 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
             children: [
               const SizedBox(width: 25.0),
               Text(
-                'STOPWATCH',
+                appLoc.stopwatchSegmentTitle,
                 style: TextStyle(
                     color: Colors.grey[600],
                     fontSize: 17.5
@@ -145,8 +168,7 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
                   setState(() {
                     if (stopwatch.isRunning)
                       {
-                        // Stop time rand change button label
-                        stopwatchStr = "Start";
+                        // Stop time
                         stopwatch.stop();
 
                         // Change type to seconds
@@ -164,7 +186,6 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
                       }
                     else
                     {
-                      stopwatchStr = "Stop & Record Time";
                       stopwatch.start();
                     }
                   });
@@ -198,7 +219,7 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
             children: [
               const SizedBox(width: 25.0),
               Text(
-                'TIME MEASURED',
+                appLoc.timeMeasuredSegmentTitle,
                 style: TextStyle(
                     color: Colors.grey[600],
                     fontSize: 17.5
@@ -264,7 +285,7 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
                   backgroundColor: MaterialStateProperty.all<Color>(const Color.fromRGBO(5, 63, 94, 1))
                 ),
                 child: Text(
-                  '$timeType | Change',
+                  '$timeType | ${appLoc.change}',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 14.0
@@ -279,7 +300,7 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
             children: [
               const SizedBox(width: 25.0),
               Text(
-                'DISTANCE',
+                appLoc.distanceSegmentTitle,
                 style: TextStyle(
                     color: Colors.grey[600],
                     fontSize: 17.5
@@ -311,32 +332,34 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showDialog(context: context, builder: (context) => AlertDialog(
-            title: const Text('Help - How To Use'),
-            content: const Text(
+            title: Text(appLoc.helpSegmentTitle),
+            content: Text(
                 '''
-                This is a simple app I made that calculates the distance of a lighting strike, by measuring the time it takes you to hear the thunder by the time you see it. For you to calculate the distance you have 2 ways.
-                
-                The first is to click the "Start" button on the stopwatch when you see the lighting and click "Stop & Record Time" when you hear the sound. You should have the distance shown in the bottom.
-                
-                The second one is to count yourself the time it takes from the moment you see the thunder to the moment you hear it. After counting the seconds or minutes, input it on the "TIME MEASURED" section. You should have the distance shown in the bottom.
+                ${appLoc.helpParagraphA}
+                                
+                ${appLoc.helpParagraphB}    
+                            
+                ${appLoc.helpParagraphC}
                 ''',
               textAlign: TextAlign.left,
             ),
             actions: [
               TextButton(onPressed: () => {
                 showDialog(context: context, builder: (context) => AlertDialog(
-                  title: const Text('Help - More'),
+                  title: Text('${appLoc.helpSegmentTitle} - ${appLoc.more}'),
                   content: Text('''
-                  EXTRA TIPS: You can change the "TIME MEASURED" Input to be seconds or minutes by clicking the button on the right labelled "Sec | Change" or "Min | Change" respectively. The "Sec" or "Min" Label of the button before the " | Change" label shows the current format. ("Sec": "Second" and "Min": "Minute")  
+                  ${appLoc.moreInfoParagraphA}  
 
-                  Made by: GalaxyGamingBoy, Version $version'''
+                  ${appLoc.madeBy}
+                  ${appLoc.translatedBy}
+                  ${appLoc.version} $version'''
                   ),
                   actions: [
-                    TextButton(onPressed: () => Navigator.pop(context), child: const Text('Return')),
+                    TextButton(onPressed: () => Navigator.pop(context), child: Text(appLoc.back)),
                   ],
                 ))
-              }, child : const Text('More')),
-              TextButton(onPressed: () => Navigator.pop(context), child: const Text('Return'))
+              }, child : Text(appLoc.more)),
+              TextButton(onPressed: () => Navigator.pop(context), child: Text(appLoc.back))
             ],
           ));
         },
@@ -360,43 +383,26 @@ class _ThunderCalculatorSettingsState extends State<ThunderCalculatorSettings> {
   String systemOfMeasurementStr = "Metric";
 
   SettingsData settingsData = SettingsData(true);
-  Timer? refreshTimer;
-
-  @override
-  void initState() {
-    refreshTimer = Timer.periodic(const Duration(milliseconds: 1), (timer) {
-      refreshSOM();
-    });
-    refreshSOM();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    refreshTimer?.cancel();
-    super.dispose();
-  }
-
-  void refreshSOM()
-  {
-    setState(() {
-      if (settingsData.metricSystem)
-      {
-        systemOfMeasurementStr = "Metric";
-      }
-      else
-      {
-        systemOfMeasurementStr = "Imperial";
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
+    var appLoc = AppLocalizations.of(context);
     settingsData = ModalRoute.of(context)!.settings.arguments as SettingsData;
+
+    setState(() {
+      if (settingsData.metricSystem)
+      {
+        systemOfMeasurementStr = appLoc!.systemOfMeasurementMetric;
+      }
+      else
+      {
+        systemOfMeasurementStr = appLoc!.systemOfMeasurementImperial;
+      }
+    });
+
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Thunder Calculator - Settings'),
+          title: Text('${appLoc!.title} - ${appLoc.settingsTitle}'),
           centerTitle: true,
           backgroundColor: const Color.fromRGBO(5, 63, 94, 1),
       ),
@@ -411,7 +417,7 @@ class _ThunderCalculatorSettingsState extends State<ThunderCalculatorSettings> {
               // System Of Measurement
               const SizedBox(width: 25.0),
               Text(
-                'SYSTEM OF MEASUREMENT',
+                appLoc.systemOfMeasurementSegmentSettingsTitle,
                 style: TextStyle(
                     color: Colors.grey[600],
                     fontSize: 17.5
@@ -427,7 +433,7 @@ class _ThunderCalculatorSettingsState extends State<ThunderCalculatorSettings> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
                 child: Text(
-                  'Current: $systemOfMeasurementStr',
+                  '${appLoc.current}: $systemOfMeasurementStr',
                   style: const TextStyle(
                       color: Colors.white,
                       fontSize: 20.0
@@ -446,14 +452,13 @@ class _ThunderCalculatorSettingsState extends State<ThunderCalculatorSettings> {
                   setState(() {
                     settingsData.metricSystem = !settingsData.metricSystem;
                   });
-                  refreshSOM();
                 },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(const Color.fromRGBO(5, 63, 94, 1))
                 ),
-                child: const Text(
-                  "Change",
-                  style: TextStyle(
+                child: Text(
+                  appLoc.change,
+                  style: const TextStyle(
                       color: Colors.white,
                       fontSize: 14.0
                   ),
@@ -473,11 +478,11 @@ class _ThunderCalculatorSettingsState extends State<ThunderCalculatorSettings> {
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(const Color.fromRGBO(5, 63, 94, 1))
                 ),
-                child: const Padding(
+                child: Padding(
                   padding: EdgeInsets.fromLTRB(12, 8, 12, 8),
                   child: Text(
-                    "Save",
-                    style: TextStyle(
+                    appLoc.save,
+                    style: const TextStyle(
                         color: Colors.white,
                         fontSize: 18.0
                     ),
