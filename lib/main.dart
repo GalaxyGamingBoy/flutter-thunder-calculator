@@ -34,7 +34,7 @@ class ThunderCalculatorMain extends StatefulWidget {
 
 class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
   // App Version
-  String version = "1.3.0";
+  String version = "1.3.1";
 
   // Other
   String timeType = "Sec";
@@ -414,9 +414,8 @@ class _ThunderCalculatorSettingsState extends State<ThunderCalculatorSettings> {
   @override
   Widget build(BuildContext context) {
     var appLoc = AppLocalizations.of(context);
-    var tmp = appLoc!.more;
 
-    metricStr = appLoc.systemOfMeasurementMetric;
+    metricStr = appLoc!.systemOfMeasurementMetric;
     imperialStr = appLoc.systemOfMeasurementImperial;
 
     settingsData = ModalRoute.of(context)!.settings.arguments as SettingsData;
@@ -500,7 +499,7 @@ class _ThunderCalculatorSettingsState extends State<ThunderCalculatorSettings> {
                     backgroundColor: MaterialStateProperty.all<Color>(const Color.fromRGBO(5, 63, 94, 1))
                 ),
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+                  padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
                   child: Text(
                     appLoc.save,
                     style: const TextStyle(
