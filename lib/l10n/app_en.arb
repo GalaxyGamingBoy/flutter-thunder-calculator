@@ -1,102 +1,102 @@
 {
-  "title": "Thunder Calculator",
-  "@title": {
-    "description": "AppBar Title"
-  },
-  "settingsTitle": "Settings",
-  "@settingsTitle": {
-    "description": "The Settings word for the settings title"
-  },
-  "stopwatchStart": "Start",
-  "@stopwatchStart": {
-    "description": "Text that displays while the stopwatch not running"
-  },
-  "stopwatchEnd": "Stop & Record Time",
-  "@stopwatchEnd": {
-    "description": "Text that displays while the stopwatch is running"
-  },
-  "stopwatchSegmentTitle": "STOPWATCH",
-  "@stopwatchSegmentTitle": {
-    "description": "The STOPWATCH segment title"
-  },
-  "timeMeasuredSegmentTitle": "TIME MEASURED",
-  "@timeMeasuredSegmentTitle": {
-    "description": "The TIME MEASURED segment title"
-  },
-  "change": "Change",
-  "@change": {
-    "description": "The Change word in TYPE | CHANGE Button Label"
-  },
-  "distanceSegmentTitle": "DISTANCE",
-  "@distanceSegmentTitle": {
-    "description": "The DISTANCE segment title"
-  },
-  "distanceTypeKM": "km",
-  "@distanceTypeKM": {
-    "description": "The distance type for km"
-  },
-  "distanceTypeMI": "mi",
-  "@distanceTypeMI": {
-    "description": "The distance type for mi"
-  },
-  "systemOfMeasurementSegmentSettingsTitle": "SYSTEM OF MEASUREMENT",
-  "@systemOfMeasurementSegmentSettingsTitle": {
-    "description": "The segment title of SYSTEM OF MEASUREMENT in settings"
-  },
-  "current": "Current",
-  "@current": {
-    "description": "The Current word for Current: METRIC"
-  },
-  "systemOfMeasurementMetric": "Metric",
-  "@systemOfMeasurementMetric": {
-    "description": "The Metric system of measurement"
-  },
-  "systemOfMeasurementImperial": "Imperial",
-  "@systemOfMeasurementImperial": {
-    "description": "The Imperial system of measurement"
-  },
-  "save": "Save",
-  "@save": {
-    "description": "Save word used for settings"
-  },
-  "helpSegmentTitle": "Help",
-  "@helpSegmentTitle": {
-    "description": "The segment title for the help menu"
-  },
-  "helpParagraphA": "This is a simple app I made that calculates the distance of a lighting strike, by measuring the time it takes you to hear the thunder by the time you see it. For you to calculate the distance you have 2 ways.",
-  "@helpParagraphA": {
-    "description": "The first paragraph on help menu"
-  },
-  "helpParagraphB": "The first is to click the \"Start\" button on the stopwatch when you see the lighting and click \"Stop & Record Time\" when you hear the sound. You should have the distance shown in the bottom.",
-  "@helpParagraphB": {
-    "description": "The second paragraph on help menu"
-  },
-  "helpParagraphC": "The second one is to count yourself the time it takes from the moment you see the thunder to the moment you hear it. After counting the seconds or minutes, input it on the \"TIME MEASURED\" section. You should have the distance shown in the bottom.",
-  "@helpParagraphC": {
-    "description": "The second paragraph on help menu"
-  },
-  "more": "More",
-  "@more": {
-    "description": "More word for Help menu"
-  },
-  "back": "Back",
-  "@back": {
-    "description": "Back word for Help menu"
-  },
-  "moreInfoParagraphA": "EXTRA TIPS: You can change the \"TIME MEASURED\" Input to be seconds or minutes by clicking the button on the right labelled \"Sec | Change\" or \"Min | Change\" respectively. The \"Sec\" or \"Min\" Label of the button before the \" | Change\" label shows the current format. (\"Sec\": \"Second\" and \"Min\": \"Minute\")",
-  "@moreInfoParagraphA": {
-    "description": "The first paragraph on more info menu"
-  },
-  "madeBy": "Made by: GalaxyGamingBoy",
-  "@madeBy": {
-    "description": "Made by menu"
-  },
-  "translatedBy": "Translated by: GalaxyGamingBoy",
-  "@translatedBy": {
-    "description": "Translated by. Feel free to add you name / username here too, I will if you don't. Except if you ask me not to. Example: Translated by: NAME, NAME"
-  },
-  "version": "Version",
-  "@version": {
-    "description": "Version word for Help menu"
-  }
+    "title": "Thunder Calculator",
+    "@title": {
+        "description": "AppBar Title"
+    },
+    "settingsTitle": "Settings",
+    "@settingsTitle": {
+        "description": "The Settings word for the settings title"
+    },
+    "stopwatchStart": "Start",
+    "@stopwatchStart": {
+        "description": "Text that displays while the stopwatch not running"
+    },
+    "stopwatchEnd": "Stop & Record Time",
+    "@stopwatchEnd": {
+        "description": "Text that displays while the stopwatch is running"
+    },
+    "stopwatchSegmentTitle": "STOPWATCH",
+    "@stopwatchSegmentTitle": {
+        "description": "The STOPWATCH segment title"
+    },
+    "timeMeasuredSegmentTitle": "TIME MEASURED",
+    "@timeMeasuredSegmentTitle": {
+        "description": "The TIME MEASURED segment title"
+    },
+    "change": "Change",
+    "@change": {
+        "description": "The Change word in TYPE | CHANGE Button Label"
+    },
+    "distanceSegmentTitle": "DISTANCE",
+    "@distanceSegmentTitle": {
+        "description": "The DISTANCE segment title"
+    },
+    "distanceTypeKM": "km",
+    "@distanceTypeKM": {
+        "description": "The distance type for km"
+    },
+    "distanceTypeMI": "mi",
+    "@distanceTypeMI": {
+        "description": "The distance type for mi"
+    },
+    "systemOfMeasurementSegmentSettingsTitle": "SYSTEM OF MEASUREMENT",
+    "@systemOfMeasurementSegmentSettingsTitle": {
+        "description": "The segment title of SYSTEM OF MEASUREMENT in settings"
+    },
+    "current": "Current",
+    "@current": {
+        "description": "The Current word for Current: METRIC"
+    },
+    "systemOfMeasurementMetric": "Metric",
+    "@systemOfMeasurementMetric": {
+        "description": "The Metric system of measurement"
+    },
+    "systemOfMeasurementImperial": "Imperial",
+    "@systemOfMeasurementImperial": {
+        "description": "The Imperial system of measurement"
+    },
+    "save": "Save",
+    "@save": {
+        "description": "Save word used for settings"
+    },
+    "helpSegmentTitle": "Help",
+    "@helpSegmentTitle": {
+        "description": "The segment title for the help menu"
+    },
+    "helpParagraphA": "This is a simple app I made that calculates the distance of a lighting strike, by measuring the time it takes you to hear the thunder by the time you see it. For you to calculate the distance you have 2 ways.",
+    "@helpParagraphA": {
+        "description": "The first paragraph on help menu"
+    },
+    "helpParagraphB": "The first is to click the \"Start\" button on the stopwatch when you see the lighting and click \"Stop & Record Time\" when you hear the sound. You should have the distance shown in the DISTANCE section.",
+    "@helpParagraphB": {
+        "description": "The second paragraph on help menu"
+    },
+    "helpParagraphC": "The second one is to count yourself the time it takes from the moment you see the thunder to the moment you hear it. After counting the seconds or minutes, input it into the \"TIME MEASURED\" section. You should have the distance shown in the DISTANCE section",
+    "@helpParagraphC": {
+        "description": "The second paragraph on help menu"
+    },
+    "more": "More",
+    "@more": {
+        "description": "More word for Help menu"
+    },
+    "back": "Back",
+    "@back": {
+        "description": "Back word for Help menu"
+    },
+    "moreInfoParagraphA": "EXTRA TIPS: You can change the \"TIME MEASURED\" Input to be seconds or minutes by clicking the button on the right labelled \"Sec | Change\" or \"Min | Change\" respectively. (\"Sec\": \"Second\" and \"Min\": \"Minute\")",
+    "@moreInfoParagraphA": {
+        "description": "The first paragraph on more info menu"
+    },
+    "madeBy": "Made by: GalaxyGamingBoy",
+    "@madeBy": {
+        "description": "Made by menu"
+    },
+    "translatedBy": "Translated by: GalaxyGamingBoy",
+    "@translatedBy": {
+        "description": "Translated by. Feel free to add you name / username here too, I will if you don't. Except if you ask me not to. Example: Translated by: NAME, NAME"
+    },
+    "version": "Version",
+    "@version": {
+        "description": "Version word for Help menu"
+    }
 }

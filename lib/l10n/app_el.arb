@@ -1,3 +1,102 @@
 {
-
+    "title": "Υπολογισμός Κεραυνού",
+    "@title": {
+        "description": "AppBar Title"
+    },
+    "settingsTitle": "Ρυθμίσεις",
+    "@settingsTitle": {
+        "description": "The Settings word for the settings title"
+    },
+    "stopwatchStart": "Έναρξη",
+    "@stopwatchStart": {
+        "description": "Text that displays while the stopwatch not running"
+    },
+    "stopwatchEnd": "Διακοπή & καταγραφή χρόνου",
+    "@stopwatchEnd": {
+        "description": "Text that displays while the stopwatch is running"
+    },
+    "stopwatchSegmentTitle": "Χρονόμετρο",
+    "@stopwatchSegmentTitle": {
+        "description": "The STOPWATCH segment title"
+    },
+    "timeMeasuredSegmentTitle": "ΧΡΟΝΟΣ ΜΕΤΡΗΣΗΣ",
+    "@timeMeasuredSegmentTitle": {
+        "description": "The TIME MEASURED segment title"
+    },
+    "change": "Αλλαγή",
+    "@change": {
+        "description": "The Change word in TYPE | CHANGE Button Label"
+    },
+    "distanceSegmentTitle": "ΑΠΟΣΤΑΣΗ",
+    "@distanceSegmentTitle": {
+        "description": "The DISTANCE segment title"
+    },
+    "distanceTypeKM": "χλμ",
+    "@distanceTypeKM": {
+        "description": "The distance type for km"
+    },
+    "distanceTypeMI": "μίλια",
+    "@distanceTypeMI": {
+        "description": "The distance type for mi"
+    },
+    "systemOfMeasurementSegmentSettingsTitle": "ΣΥΣΤΗΜΑ ΜΕΤΡΗΣΕΩΝ",
+    "@systemOfMeasurementSegmentSettingsTitle": {
+        "description": "The segment title of SYSTEM OF MEASUREMENT in settings"
+    },
+    "current": "Τρέχον",
+    "@current": {
+        "description": "The Current word for Current: METRIC"
+    },
+    "systemOfMeasurementMetric": "Μετρικό",
+    "@systemOfMeasurementMetric": {
+        "description": "The Metric system of measurement"
+    },
+    "systemOfMeasurementImperial": "Ιμπέριαλ",
+    "@systemOfMeasurementImperial": {
+        "description": "The Imperial system of measurement"
+    },
+    "save": "Αποθήκευση",
+    "@save": {
+        "description": "Save word used for settings"
+    },
+    "helpSegmentTitle": "Βοήθεια",
+    "@helpSegmentTitle": {
+        "description": "The segment title for the help menu"
+    },
+    "helpParagraphA": "Αυτή είναι μια απλή εφαρμογή που έφτιαξα και υπολογίζει την απόσταση ενός κεραυνού, μετρώντας το χρόνο από την στιγμή που ακούτε έναν κεραυνό έως την στιγμή που θα τον δείτε. Για να υπολογίσετε την απόσταση υπάρχουν 2 τρόποι.",
+    "@helpParagraphA": {
+        "description": "The first paragraph on help menu"
+    },
+    "helpParagraphB": "Η πρώτη είναι να κάνετε κλικ στο κουμπί \"Έναρξη\" στο χρονόμετρο όταν βλέπετε τον κεραυνό και κάντε κλικ στο κουμπί \"Διακοπή και καταγραφή χρόνου\" όταν ακούσετε τον ήχο. Θα πρέπει να εμφανίζεται η απόσταση στην ενότητα ΑΠΟΣΤΑΣΗ.",
+    "@helpParagraphB": {
+        "description": "The second paragraph on help menu"
+    },
+    "helpParagraphC": "Η δεύτερη είναι να μετράτε τον χρόνο που χρειάζεται από τη στιγμή που θα δείτε τη βροντή μέχρι τη στιγμή που θα την ακούσετε. Αφού μετρήσετε τα δευτερόλεπτα ή τα λεπτά, εισαγάγετε τα στην ενότητα \"ΧΡΟΝΟΣ ΜΕΤΡΗΣΗΣ\". Θα πρέπει να εμφανίζεται η απόσταση στην ενότητα ΑΠΟΣΤΑΣΗ.",
+    "@helpParagraphC": {
+        "description": "The second paragraph on help menu"
+    },
+    "more": "Περισσότερα",
+    "@more": {
+        "description": "More word for Help menu"
+    },
+    "back": "Πίσω",
+    "@back": {
+        "description": "Back word for Help menu"
+    },
+    "moreInfoParagraphA": "ΕΠΙΠΛΈΟΝΕΣ ΣΥΜΒΟΥΛΕΣ: Μπορείτε να αλλάξετε την είσοδο \"ΧΡΟΝΟΣ ΜΕΤΡΗΣΗΣ\" σε δευτερόλεπτα ή λεπτά κάνοντας κλικ στο κουμπί στα δεξιά με την ένδειξη \"Sec | Αλλαγή\" ή \"Min | Αλλαγή\" αντίστοιχα. (\"Sec\": \"δευτερόλεπτο\" και \"Min\": \"λεπτό\")",
+    "@moreInfoParagraphA": {
+        "description": "The first paragraph on more info menu"
+    },
+    "madeBy": "Δημιουργήθηκε από: GalaxyGamingBoy",
+    "@madeBy": {
+        "description": "Made by menu"
+    },
+    "translatedBy": "Μεταφράστηκε από: GalaxyGamingBoy",
+    "@translatedBy": {
+        "description": "Translated by. Feel free to add you name / username here too, I will if you don't. Except if you ask me not to. Example: Translated by: NAME, NAME"
+    },
+    "version": "Εκδοση",
+    "@version": {
+        "description": "Version word for Help menu"
+    }
 }
