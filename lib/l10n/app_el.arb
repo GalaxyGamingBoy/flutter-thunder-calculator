@@ -47,11 +47,11 @@
     "@current": {
         "description": "The Current word for Current: METRIC"
     },
-    "systemOfMeasurementMetric": "Μετρικό",
+    "systemOfMeasurementMetric": "Μετρικό ( SI )",
     "@systemOfMeasurementMetric": {
         "description": "The Metric system of measurement"
     },
-    "systemOfMeasurementImperial": "Ιμπέριαλ",
+    "systemOfMeasurementImperial": "Ιμπέριαλ ( USA )",
     "@systemOfMeasurementImperial": {
         "description": "The Imperial system of measurement"
     },
