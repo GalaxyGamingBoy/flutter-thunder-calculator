@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:thunder_calculator/l10n/l10n.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -83,6 +84,18 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
     timeController.dispose();
     refreshTimer?.cancel();
     super.dispose();
+  }
+
+  openIssues() async {
+    var issuesURL = Uri(path: "https://github.com/GalaxyGamingBoy/flutter-thunder-calculator/issues/new");
+    if (await canLaunchUrl(issuesURL))
+      {
+        await launchUrl(issuesURL);
+      }
+    else
+      {
+        throw 'Could not launch issues url';
+      }
   }
   
   @override
@@ -356,6 +369,9 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
                   ${appLoc.version} $version'''
                   ),
                   actions: [
+                    TextButton(onPressed: () async {
+                      if (!await launchUrl(Uri.parse("https://github.com/GalaxyGamingBoy/flutter-thunder-calculator/issues/new"))) throw 'Could not open issues';
+                    }, child: Text(appLoc.reportIssue),),
                     TextButton(onPressed: () => Navigator.pop(context), child: Text(appLoc.back)),
                   ],
                 ))
