@@ -85,18 +85,6 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
     refreshTimer?.cancel();
     super.dispose();
   }
-
-  openIssues() async {
-    var issuesURL = Uri(path: "https://github.com/GalaxyGamingBoy/flutter-thunder-calculator/issues/new");
-    if (await canLaunchUrl(issuesURL))
-      {
-        await launchUrl(issuesURL);
-      }
-    else
-      {
-        throw 'Could not launch issues url';
-      }
-  }
   
   @override
   Widget build(BuildContext context) {
@@ -152,7 +140,7 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
           const Image(
             image: AssetImage('assets/thunder.jpg'),
             height: 350.0,
-            width: 750.0,
+            width: 800.0,
             fit: BoxFit.fitWidth,
           ),
 
@@ -369,6 +357,9 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
                   ${appLoc.version} $version'''
                   ),
                   actions: [
+                    TextButton(onPressed: () async {
+                      if (!await launchUrl(Uri.parse("https://github.com/GalaxyGamingBoy/flutter-thunder-calculator/blob/master/PRIVACY_POLICY.MD"))) throw 'Could not open privacy policy';
+                    }, child: const Text('Privacy Policy'),),
                     TextButton(onPressed: () async {
                       if (!await launchUrl(Uri.parse("https://github.com/GalaxyGamingBoy/flutter-thunder-calculator/issues/new"))) throw 'Could not open issues';
                     }, child: Text(appLoc.reportIssue),),
