@@ -10,6 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 void main() {
   runApp(MaterialApp(
     home: const ThunderCalculatorMain(),
+    title: "Thunder Calculator",
     supportedLocales: L10n.all,
     localizationsDelegates: const [
       AppLocalizations.delegate,
