@@ -35,7 +35,7 @@ class ThunderCalculatorMain extends StatefulWidget {
 
 class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
   // App Version
-  String version = "1.3.1";
+  String version = "1.3.2";
 
   // Other
   String timeType = "Sec";
@@ -345,6 +345,7 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
                 ''',
               textAlign: TextAlign.left,
             ),
+            scrollable: true,
             actions: [
               TextButton(onPressed: () => {
                 showDialog(context: context, builder: (context) => AlertDialog(
@@ -356,6 +357,7 @@ class _ThunderCalculatorMainState extends State<ThunderCalculatorMain> {
                   ${appLoc.translatedBy}
                   ${appLoc.version} $version'''
                   ),
+                  scrollable: true,
                   actions: [
                     TextButton(onPressed: () async {
                       if (!await launchUrl(Uri.parse("https://github.com/GalaxyGamingBoy/flutter-thunder-calculator/blob/master/PRIVACY_POLICY.MD"))) throw 'Could not open privacy policy';

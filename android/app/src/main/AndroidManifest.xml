@@ -1,7 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="galaxygamingboy.github.io.thunder_calculator">
+    
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
    <application
-        android:label="thunder_calculator"
+        android:label="Thunder Calculator"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
