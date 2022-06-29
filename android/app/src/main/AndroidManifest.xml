@@ -2,7 +2,7 @@
     package="galaxygamingboy.github.io.thunder_calculator">
    <application
         android:label="thunder_calculator"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
